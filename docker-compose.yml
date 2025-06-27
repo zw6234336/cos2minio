@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  cos2minio:
+    build: .
+    container_name: cos2minio
+    volumes:
+      - ./data:/app/data          # 挂载数据目录
+      - ./logs:/app/logs          # 挂载日志目录
+      - ./temp:/app/temp_downloads # 挂载临时目录
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - cos2minio-net
+
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+    command: server /data --console-address ":9001"
+    networks:
+      - cos2minio-net
+
+volumes:
+  minio_data:
+
+networks:
+  cos2minio-net:
+    driver: bridge
