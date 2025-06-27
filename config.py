@@ -10,41 +10,11 @@ load_dotenv()
 
 # 腾讯云COS配置
 COS_CONFIGS = {
-    'frcdap-dev': {
+    'bucket': {
         'secret_id': os.getenv('COS_FRCDAP_DEV_SECRET_ID'),
         'secret_key': os.getenv('COS_FRCDAP_DEV_SECRET_KEY'),
         'region': os.getenv('COS_FRCDAP_DEV_REGION'),
         'bucket': os.getenv('COS_FRCDAP_DEV_BUCKET')
-    },
-    'frcdap': {
-        'secret_id': os.getenv('COS_FRCDAP_SECRET_ID'),
-        'secret_key': os.getenv('COS_FRCDAP_SECRET_KEY'),
-        'region': os.getenv('COS_FRCDAP_REGION'),
-        'bucket': os.getenv('COS_FRCDAP_BUCKET')
-    },
-    'dop-pro': {
-        'secret_id': os.getenv('COS_DOP_PRO_SECRET_ID'),
-        'secret_key': os.getenv('COS_DOP_PRO_SECRET_KEY'),
-        'region': os.getenv('COS_DOP_PRO_REGION'),
-        'bucket': os.getenv('COS_DOP_PRO_BUCKET')
-    },
-    'video': {
-        'secret_id': os.getenv('COS_VIDEO_SECRET_ID'),
-        'secret_key': os.getenv('COS_VIDEO_SECRET_KEY'),
-        'region': os.getenv('COS_VIDEO_REGION'),
-        'bucket': os.getenv('COS_VIDEO_BUCKET')
-    },
-    'upload': {
-        'secret_id': os.getenv('COS_UPLOAD_SECRET_ID'),
-        'secret_key': os.getenv('COS_UPLOAD_SECRET_KEY'),
-        'region': os.getenv('COS_UPLOAD_REGION'),
-        'bucket': os.getenv('COS_UPLOAD_BUCKET')
-    },
-    'scrm-pro': {
-        'secret_id': os.getenv('COS_SCRM_PRO_SECRET_ID'),
-        'secret_key': os.getenv('COS_SCRM_PRO_SECRET_KEY'),
-        'region': os.getenv('COS_SCRM_PRO_REGION'),
-        'bucket': os.getenv('COS_SCRM_PRO_BUCKET')
     }
 }
 
